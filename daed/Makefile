@@ -66,7 +66,6 @@ define Package/daed
     +ca-bundle +kmod-sched-core +kmod-sched-bpf \
     +kmod-veth +v2ray-geoip +v2ray-geosite \
     +@KERNEL_XDP_SOCKETS \
-    +DAED_USE_VMLINUX_BTF:vmlinux-btf
 endef
 
 define Package/daed/config
@@ -78,9 +77,6 @@ define Package/daed/config
 	config DAED_USE_KERNEL_BTF
 		bool "Use kernel BTF (integrated)"
 		depends on KERNEL_DEBUG_INFO_BTF
-
-	config DAED_USE_VMLINUX_BTF
-		bool "Use vmlinux-btf package"
 	endchoice
 endef
 
